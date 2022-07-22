@@ -16,7 +16,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -37,8 +36,7 @@ public class AdminController {
 
   @GetMapping("/admin/categories")
   public String getCategories(Model model) {
-    List<Category> allCategories = categoryService.getAllCategory();
-    model.addAttribute("categories", allCategories);
+    model.addAttribute("categories", categoryService.getAllCategory());
     return "categories";
   }
 
@@ -75,8 +73,7 @@ public class AdminController {
 
   @GetMapping("/admin/products")
   public String getProducts(Model model) {
-    List<Product> allProdcuts = productService.getAllProdcuts();
-    model.addAttribute("products", allProdcuts);
+    model.addAttribute("products", productService.getAllProdcuts());
     return "products";
   }
 
